@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/styles.css" rel="stylesheet"/>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>Generador Unplug</title>
+</head>
+<body class="indexbg">
+    <button class="home" id="home"><center><img src="images/home-svgrepo-com.svg" alt="home" style="width: 100%;"></center></button>
+    <div class="container">
+        <div class="box form-box">
+            <form id="imageForm">
+                <center>
+                    <header>Slides</header>
+                    
+                    <div class="field input">
+                        <label for="Titulo">Título:</label>
+                        <textarea id="titulo" type="text"></textarea>
+                    </div>
+
+                    <div class="field input">
+                        <label for="Subtitulo">Subtitulo:</label>
+                        <textarea id="subtitulo" type="text"></textarea>
+                    </div>
+
+                    <div class="field input">
+                        <label for="File">Imagen:</label>
+                        <input type="file" id="imageInput" accept="image/*">
+                    </div>
+                    
+ 
+                    <div>
+                        <button class="btn" id="carruselportadapost" type="submit" value="one">Crear</button>
+                    </div>
+                </center>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const titulo = document.getElementById('titulo');
+        const subtitulo = document.getElementById('subtitulo');
+
+        document.getElementById('imageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fileInput = document.getElementById('imageInput');
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                localStorage.setItem('uploadedImage', event.target.result);
+                window.location.href = 'slides.html';
+            };
+            reader.readAsDataURL(file);
+
+            const tituloValue = titulo.value;
+            localStorage.setItem('titulo', tituloValue);
+            
+            const subtituloValue = subtitulo.value;
+            localStorage.setItem('subtitulo', subtituloValue);
+
+        });
+
+
+        let btns = document.querySelectorAll("submit");
+
+        document.getElementById('carruselportadapost').onclick = function() {
+        imageForm.submit();
+        window.location.href="slides.html";}
+
+        document.getElementById('home').onclick = function() {
+        window.location.href="index.html";
+        }
+    </script>
+
+</body>
+</html>

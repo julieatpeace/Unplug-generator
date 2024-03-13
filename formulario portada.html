@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/styles.css" rel="stylesheet"/>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>Generador Unplug</title>
+</head>
+<body class="indexbg">
+    <button class="home" id="home"><center><img src="images/home-svgrepo-com.svg" alt="home" style="width: 100%;"></center></button>
+    <div class="container">
+        <div class="box form-box">
+            <form id="imageForm">
+                <center>
+                    <header>Portada</header>
+                    
+                    <div class="field input">
+                        <label for="Titulo">Título:</label>
+                        <textarea id="titulo" type="text"></textarea>
+                    </div>
+
+                    <div class="field input">
+                        <label for="Subtitulo">Subtitulo:</label>
+                        <textarea id="subtitulo" type="text"></textarea>
+                    </div>
+
+                    <div class="field input">
+                        <label for="File">Imagen:</label>
+                        <input type="file" id="imageInput" accept="image/*">
+                    </div>
+ 
+                    <div>
+                        <button class="btn" id="carruselportadapost" type="submit" value="one">Crear</button>
+                    </div>
+                </center>
+            </form>
+        </div>
+
+        <div class="box form-box">
+            <form id="imageForm2">
+                <center>
+                    <header>Slides</header>
+
+                    <div class="field input">
+                        <label for="File">Ícono:</label>
+                        <input type="file" id="imageInput2" accept="image/*">
+                    </div>
+
+                    <div class="field input">
+                        <label for="Numeroslide">Número:</label>
+                        <input id="numeroslide" type="number">
+                    </div>
+                    
+                    <div class="field input">
+                        <label for="Tituloslide">Título:</label>
+                        <textarea id="tituloslide" type="text"></textarea>
+                    </div>
+
+                    <div class="field input">
+                        <label for="textoslide">Texto:</label>
+                        <textarea id="textoslide" type="text"></textarea>
+                    </div>
+ 
+                    <div>
+                        <button class="btn" id="carruselslidepost" type="submit" value="one">Crear</button>
+                    </div>
+                </center>
+            </form>
+        </div>
+
+        <div class="box form-box">
+            <form id="imageForm3">
+                <center>
+                    <header>Cierre</header>
+                    
+                    <div class="field input">
+                        <label for="Cierre">Texto de cierre</label>
+                        <textarea id="cierre" type="text">Ready to harness the power of data?</textarea>
+                        <textarea id="cierre2" type="text">Let's elevate your business to new heights together!</textarea>
+                    </div>
+ 
+                    <div>
+                        <button class="btn" id="carruselcierrepost" type="submit" value="one">Crear</button>
+                    </div>
+                </center>
+            </form>
+        </div>
+
+        <div class="box form-box">
+                <center>
+                    <header>Recursos</header>
+                    <div>
+                        <label>Fotos:</label>
+                        <button class="btn" id="unsplash" onclick="unsplash()">Unsplash</button>
+                        <br>
+                        <label>Íconos:</label>
+                        <button class="btn" id="botoniconos" onclick="icon8()">Iconos</button>
+                    </div>
+                    
+                </center>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        document.getElementById('imageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fileInput = document.getElementById('imageInput');
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                localStorage.setItem('uploadedImage', event.target.result);
+                window.location.href = 'portada.html';
+            };
+            reader.readAsDataURL(file);
+
+            const titulo = document.getElementById('titulo');
+            const subtitulo = document.getElementById('subtitulo');
+            const tituloValue = titulo.value;
+            localStorage.setItem('titulo', tituloValue);
+            
+            const subtituloValue = subtitulo.value;
+            localStorage.setItem('subtitulo', subtituloValue);
+
+        });
+
+        document.getElementById('imageForm2').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fileInput = document.getElementById('imageInput2');
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                localStorage.setItem('uploadedImage', event.target.result);
+                window.location.href = 'slides.html';
+            };
+            reader.readAsDataURL(file);
+
+            const tituloslide = document.getElementById('tituloslide');
+            const textoslide = document.getElementById('textoslide');
+
+            const tituloslideValue = tituloslide.value;
+            localStorage.setItem('tituloslide', tituloslideValue);
+            
+            const textoslideValue = textoslide.value;
+            localStorage.setItem('textoslide', textoslideValue);
+
+            const numeroslide = document.getElementById("numeroslide");
+            const numeroslideValue = numeroslide.value;
+            localStorage.setItem('numeroslide', numeroslideValue);
+
+        });
+
+        document.getElementById('imageForm3').addEventListener('submit', function(e) {
+            e.preventDefault();
+           
+            const cierre = document.getElementById('cierre');
+            const cierreValue = cierre.value;
+            localStorage.setItem('cierre', cierreValue);
+
+            const cierre2 = document.getElementById('cierre2');
+            const cierre2Value = cierre2.value;
+            localStorage.setItem('cierre2', cierre2Value);
+
+        });
+
+
+        let btns = document.querySelectorAll("submit");
+
+        document.getElementById('home').onclick = function() {
+        imageForm.submit();
+        window.location.href="index.html";}
+
+        document.getElementById('carruselportadapost').onclick = function() {
+        imageForm.submit();
+        window.location.href="portada.html";}
+
+        document.getElementById('carruselslidepost').onclick = function() {
+        window.location.href="slides.html";
+        }
+
+        document.getElementById('carruselcierrepost').onclick = function() {
+        window.location.href="cierre.html";
+        }
+
+        function unsplash() {
+        window.open("https://unsplash.com/", "_blank");
+        }
+
+        function icon8() {
+        window.open("https://icons8.com/illustrations/style--3d-fluency", "_blank");
+        }
+    </script>
+
+</body>
+</html>

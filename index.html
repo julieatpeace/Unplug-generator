@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>Generador UCOM</title>
+    
+    <style>
+
+    </style>
+
+</head>
+<body class="indexbg">
+    <div class="loader"></div>
+    <div>
+       <center><header style="margin: 50px;"><h1>¿Qué formato te gustaría generar?</h1></header></center>
+    </div>
+    <center>
+    <div style="width: 80%;">
+        <div class="container">
+            <div id="toportada" class="homebox">
+                <img clas="imageclass" src="images/portada.png" alt="home" style="width: 100%; height: auto; border-radius: 10px;">
+                <p>Carrusel</p>              
+            </div>
+        </div></center>
+</div>
+
+<script>
+    window.addEventListener("load",() => {
+    const loader = document.querySelector(".loader");
+
+    loader.classList.add("loader-hidden");
+
+    loader.addEventListener("transitionend", () => {
+        document.body.removeChild(loader);
+    })
+})
+</script>
+
+    <script>
+
+        document.getElementById('toportada').onclick = function() {
+        window.location.href="formulario portada.html";
+        }
+
+        document.getElementById('toslides').onclick = function() {
+        window.location.href="formulario slides.html";
+        }
+
+
+    </script>
+</body>
+</html>
