@@ -1,41 +1,37 @@
 @font-face {
   font-family: "Open Sans Extrabold";
-  src: url("https://db.onlinewebfonts.com/t/8bac22ed4fd7c8a30536be18e2984f84.eot");
-  src: url("https://db.onlinewebfonts.com/t/8bac22ed4fd7c8a30536be18e2984f84.eot?#iefix")format("embedded-opentype"),
-  url("https://db.onlinewebfonts.com/t/8bac22ed4fd7c8a30536be18e2984f84.woff2")format("woff2"),
-  url("https://db.onlinewebfonts.com/t/8bac22ed4fd7c8a30536be18e2984f84.woff")format("woff"),
-  url("https://db.onlinewebfonts.com/t/8bac22ed4fd7c8a30536be18e2984f84.ttf")format("truetype"),
-  url("https://db.onlinewebfonts.com/t/8bac22ed4fd7c8a30536be18e2984f84.svg#Open Sans Extrabold")format("svg");
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 800;
 }
 
 @font-face {
   font-family: "Open Sans Regular";
-  src: url("https://db.onlinewebfonts.com/t/011860fc12a11332d2863a747de7bc32.eot");
-  src: url("https://db.onlinewebfonts.com/t/011860fc12a11332d2863a747de7bc32.eot?#iefix")format("embedded-opentype"),
-  url("https://db.onlinewebfonts.com/t/011860fc12a11332d2863a747de7bc32.woff2")format("woff2"),
-  url("https://db.onlinewebfonts.com/t/011860fc12a11332d2863a747de7bc32.woff")format("woff"),
-  url("https://db.onlinewebfonts.com/t/011860fc12a11332d2863a747de7bc32.ttf")format("truetype"),
-  url("https://db.onlinewebfonts.com/t/011860fc12a11332d2863a747de7bc32.svg#Open Sans Regular")format("svg");
+    font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 400;
 }
 
 @font-face {
   font-family: "Open Sans Semibold";
-  src: url("https://db.onlinewebfonts.com/t/33f225b8f5f7d6b34a0926f58f96c1e9.eot");
-  src: url("https://db.onlinewebfonts.com/t/33f225b8f5f7d6b34a0926f58f96c1e9.eot?#iefix")format("embedded-opentype"),
-  url("https://db.onlinewebfonts.com/t/33f225b8f5f7d6b34a0926f58f96c1e9.woff2")format("woff2"),
-  url("https://db.onlinewebfonts.com/t/33f225b8f5f7d6b34a0926f58f96c1e9.woff")format("woff"),
-  url("https://db.onlinewebfonts.com/t/33f225b8f5f7d6b34a0926f58f96c1e9.ttf")format("truetype"),
-  url("https://db.onlinewebfonts.com/t/33f225b8f5f7d6b34a0926f58f96c1e9.svg#Open Sans Semibold")format("svg");
+    font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 600;
 }
 
 @font-face {
   font-family: "Open Sans Bold";
-  src: url("https://db.onlinewebfonts.com/t/50145685042b4df07a1fd19957275b81.eot");
-  src: url("https://db.onlinewebfonts.com/t/50145685042b4df07a1fd19957275b81.eot?#iefix")format("embedded-opentype"),
-  url("https://db.onlinewebfonts.com/t/50145685042b4df07a1fd19957275b81.woff2")format("woff2"),
-  url("https://db.onlinewebfonts.com/t/50145685042b4df07a1fd19957275b81.woff")format("woff"),
-  url("https://db.onlinewebfonts.com/t/50145685042b4df07a1fd19957275b81.ttf")format("truetype"),
-  url("https://db.onlinewebfonts.com/t/50145685042b4df07a1fd19957275b81.svg#Open Sans Bold")format("svg");
+    font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 700;
 }
 
 
